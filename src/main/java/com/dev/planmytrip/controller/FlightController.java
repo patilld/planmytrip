@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FlightController {
 
-    @GetMapping("/filght")
+    @GetMapping("/getFlight")
     public ResponseEntity<?> getFlight() {
 
         return new ResponseEntity<>("Flights are under maintenance", HttpStatus.OK);
     }
 
-    @PostMapping("/filght")
+    @PostMapping("/saveFlight")
     public ResponseEntity<?> saveFlight() {
 
         return new ResponseEntity<>("Flights are under maintenance", HttpStatus.ACCEPTED);
