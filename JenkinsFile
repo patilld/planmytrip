@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+    options {
+        buildDiscarder(logRotator(numToKeepStr:'3', artifactNumToKeepStr:'3'))
+    }
+    tools {
+        maven 'MAVEN'
+    }
+    stages {
+        stage('Code compilation') {
+            steps {
+                echo 'Starting code compilation...'
+                sh 'mvn clean compile'
+                echo 'Code compilation completed successfully!...'
+            }
+        }
+        stage('Code QA execution') {
+            steps {
+                echo 'Running JUnit testcases...'
+                sh 'mvn clean test'
+                echo 'JUnit testcases completed successfully!...'
+            }
+        }
+        stage('Code package') {
+            steps {
+                echo 'Creating artifact...'
+                sh 'mvn clean package -DskipTests=true'
+                echo 'Artifact created successfully!...'
+            }
+        }
+    }
+}
