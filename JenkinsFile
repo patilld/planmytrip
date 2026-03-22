@@ -4,8 +4,6 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr:'3', artifactNumToKeepStr:'3'))
     }
     tools {
-        maven 'MAVEN'
-        git 'myGit'
     }
     stages {
         stage('Code compilation') {
