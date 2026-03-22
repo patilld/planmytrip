@@ -11,7 +11,7 @@ public class FlightController {
     @GetMapping("/filght")
     public ResponseEntity<?> getFlight() {
 
-        return new ResponseEntity<>("Flights", HttpStatus.OK);
+        return new ResponseEntity<>("Flights are under maintenance", HttpStatus.OK);
     }
 
 
