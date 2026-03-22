@@ -15,7 +15,7 @@ public class FlightController {
         return new ResponseEntity<>("Flights are under maintenance", HttpStatus.OK);
     }
 
-    @PostMapping("/saveFlight")
+    @PostMapping("/saveFlightData")
     public ResponseEntity<?> saveFlight() {
 
         return new ResponseEntity<>("Flights are under maintenance", HttpStatus.ACCEPTED);
